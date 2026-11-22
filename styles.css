@@ -1,5 +1,5 @@
 :root {
-  --cream: #FBF6EC;
+  --cream: #FDFAEB;
   --paper: #FFFDF8;
   --sand: #F1E8D6;
   --sage: #8FB07F;
@@ -35,13 +35,15 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- Top bar ---------- */
 .topbar {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(251, 246, 236, 0.92);
+  background: rgba(253, 250, 235, 0.94);
   backdrop-filter: blur(8px);
   padding: calc(10px + env(safe-area-inset-top)) 18px 10px;
   border-bottom: 1px solid var(--line);
 }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; font-size: 20px; color: var(--forest); letter-spacing: -0.2px; }
-.brand-mark { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--sage); object-fit: cover; }
+.brand-mark { height: 46px; width: auto; }
+.wordmark { display: block; width: min(220px, 70%); margin: 0 auto; }
+.wordmark.sm { width: 120px; }
 .welcome-logo { width: min(280px, 80%); margin: 0 auto 4px; border-radius: 24px; }
 
 main { max-width: 640px; margin: 0 auto; padding: 18px 16px 24px; }
@@ -176,7 +178,7 @@ h2 { font-size: 18px; font-weight: 800; color: var(--forest); margin: 26px 0 10p
 .timeline figure { margin: 0; flex: none; width: 132px; scroll-snap-align: start; position: relative; }
 .timeline img { width: 132px; height: 132px; object-fit: cover; border-radius: 16px; cursor: zoom-in; }
 .timeline figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; text-align: center; }
-.timeline .add-photo {
+.add-photo {
   width: 132px; height: 132px; border-radius: 16px; border: 2px dashed var(--sage);
   display: grid; place-items: center; text-align: center; color: var(--leaf); font-weight: 800; font-size: 13px; cursor: pointer; background: #F4F8EF;
 }

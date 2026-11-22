@@ -165,7 +165,7 @@ async function renderToday() {
   if (!state.plants.length) {
     $app.innerHTML = `
       <div class="empty card">
-        <img src="icons/logo.jpg" alt="Plant Daddy" class="welcome-logo" />
+        <img src="icons/wordmark.png" alt="Plant Daddy" class="wordmark" style="margin-bottom:10px" />
         <h1>Welcome, Plant Daddy</h1>
         <p class="sub">Add your first plant and I'll keep a running to-do list so nothing goes thirsty.</p>
         <a class="btn" href="#/new">＋ Add a plant</a>
@@ -183,7 +183,7 @@ async function renderToday() {
   $app.innerHTML = `
     <h1>${greeting()}, Plant Daddy</h1>
     <p class="sub">${new Date().toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</p>
-    <div class="hero"><div class="big">${due.length ? '🌤️' : '🌈'}</div><div>${heroText}</div></div>
+    <div class="hero">${due.length ? '<div class="big">🌤️</div>' : '<img src="icons/wordmark-sm.png" alt="" style="height:56px;width:auto" />'}<div>${heroText}</div></div>
     ${due.length ? `<h2>To do</h2><div class="stack" id="due">${due.map(t => taskRow(t, true)).join('')}</div>` : ''}
     ${upcoming.length ? `<h2>Coming up this week</h2><div class="stack">${upcoming.map(t => taskRow(t, false)).join('')}</div>` : ''}
   `;
@@ -236,6 +236,7 @@ async function renderPlants() {
       }).join('')}
     </div>
     <div style="margin-top:16px"><a class="btn ghost block" href="#/new">＋ Add another plant</a></div>
+    <img src="icons/wordmark.png" alt="" class="wordmark sm" style="margin-top:28px;opacity:.9" />
   `;
 }
 
@@ -486,6 +487,7 @@ async function renderForm(id) {
   let pendingPhoto = null;
 
   $app.innerHTML = `
+    ${editing ? '' : '<img src="icons/wordmark.png" alt="" class="wordmark sm" style="margin:0 0 6px" />'}
     <h1>${editing ? 'Edit ' + esc(displayName(p)) : 'New plant'}</h1>
     <p class="sub">${editing ? 'Tweak details or the schedule.' : 'The basics now — you can fill in the rest later.'}</p>
     <form id="plant-form" autocomplete="off">
@@ -657,7 +659,7 @@ async function renderSettings() {
     <div class="card">
       <button class="btn danger small" id="wipe">Delete all plant data</button>
     </div>
-    <img src="icons/logo.jpg" alt="Plant Daddy" class="welcome-logo" style="margin-top:28px;width:160px" />
+    <img src="icons/wordmark.png" alt="Plant Daddy" class="wordmark sm" style="margin-top:28px" />
     <p class="small" style="text-align:center;margin-top:8px">Plant Daddy v1 · made with 🌿 in Denver</p>
   `;
 
