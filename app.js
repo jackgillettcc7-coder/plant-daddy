@@ -713,7 +713,10 @@ async function renderSettings() {
 
 // ---------- Boot ----------
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(r => r.update()).catch(() => {});
+  // When a new version takes over, reload once so the screen shows it.
+  let reloaded = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (!reloaded) { reloaded = true; location.reload(); } });
 }
 // Re-render Today when the app comes back to the foreground on a new day.
 document.addEventListener('visibilitychange', () => {
