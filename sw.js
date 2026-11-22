@@ -1,5 +1,5 @@
 // Plant Daddy — offline support. Bump VERSION when you change any app file so phones pick up the update.
-const VERSION = 'plant-daddy-v6';
+const VERSION = 'plant-daddy-v7';
 const FILES = ['./', './index.html', './styles.css', './db.js', './care.js', './app.js', './manifest.webmanifest', './icons/logo-sm.png', './icons/logo.png', './icons/apple-touch-icon.png', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', e => {
