@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Plant Daddy</title>
+  <meta name="theme-color" content="#FBF6EC" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Plant Daddy" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/today" class="brand" aria-label="Plant Daddy home">
+      <img src="icons/face.png" alt="" class="brand-mark" />
+      <span>Plant Daddy</span>
+    </a>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <nav class="bottomnav" aria-label="Main">
+    <a href="#/today" data-nav="today"><span class="ico">☀️</span><span>Today</span></a>
+    <a href="#/plants" data-nav="plants"><span class="ico">🪴</span><span>Plants</span></a>
+    <a href="#/new" data-nav="new" class="add"><span class="ico">＋</span><span>Add</span></a>
+    <a href="#/settings" data-nav="settings"><span class="ico">⚙️</span><span>Settings</span></a>
+  </nav>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="db.js"></script>
+  <script src="care.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

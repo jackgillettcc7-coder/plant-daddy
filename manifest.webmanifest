@@ -1,0 +1,22 @@
+{
+  "name": "Plant Daddy",
+  "short_name": "Plant Daddy",
+  "description": "Keep your plants alive: daily to-dos, photo timeline, and care plans from Claude.",
+  "start_url": "./index.html#/today",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FDFBEF",
+  "theme_color": "#FDFBEF",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
