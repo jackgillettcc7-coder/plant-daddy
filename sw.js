@@ -1,9 +1,9 @@
 // Plant Daddy — offline support. Bump VERSION when you change any app file so phones pick up the update.
-const VERSION = 'plant-daddy-v5';
+const VERSION = 'plant-daddy-v6';
 const FILES = ['./', './index.html', './styles.css', './db.js', './care.js', './app.js', './manifest.webmanifest', './icons/logo-sm.png', './icons/logo.png', './icons/apple-touch-icon.png', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSION).then(c => c.addAll(FILES.map(f => new Request(f, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
@@ -22,6 +22,6 @@ self.addEventListener('fetch', e => {
         caches.open(VERSION).then(c => c.put(e.request, copy));
         return res;
       })
-      .catch(() => caches.match(e.request))
+      .catch(() => caches.match(e.request, { ignoreSearch: true }))
   );
 });
